@@ -29,7 +29,7 @@ docker run -it --name $name -d -p8888:80 \
 --env spring.datasource.username="root" \
 --env spring.datasource.password="fzb8004568933" \
 --env spring.datasource.url="jdbc:mysql://116.205.172.86:3306/solo?useUnicode=yes&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC" \
-Tbed
+tbed
 
 echo "删除临时文件夹"
 rm -rf $work_dir
