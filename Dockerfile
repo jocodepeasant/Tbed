@@ -1,4 +1,4 @@
-FROM openjdk:8-alpine
+FROM maven:3-jdk-8-alpine as MVN_BUILD
 
 LABEL maintainer="fzb<fzb2469081876@163.com>"
 
