@@ -1,7 +1,7 @@
 #! /bin/bash
 set -x
 set +e
-name=Tbed #部署应用名
+name=tbed #部署应用名
 work_dir=/tmp/tbed-build
 if [ -d $work_dir ]; then
   rm -rf $work_dir
@@ -10,6 +10,7 @@ mkdir -p $work_dir
 
 echo "开始拉取最新代码"
 cd $work_dir \
+&& git init \
 && git clone https://github.com/Hello-hao/Tbed.git \
 
 #判断容器是否存在，存在则删除

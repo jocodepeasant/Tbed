@@ -10,10 +10,11 @@ RUN cd /tmp && mvn package -DskipTests -Pci \
 
 FROM openjdk:8-alpine
 LABEL maintainer="fzb<fzb2469081876@163.com>"
-
 WORKDIR /opt/tbed/
+
+COPY --from=MVN_BUILD /opt/tbed/ /opt/tbed/
 
 # 声明服务运行在8888端口
 EXPOSE 8888
 # 指定docker容器启动时运行jar包
-# ENTRYPOINT ["java", "-jar","/opt/tbed/Tbed-2.0-Free.jar"]
+ENTRYPOINT ["java", "-jar","/opt/tbed/Tbed-2.0-Free.jar"]
