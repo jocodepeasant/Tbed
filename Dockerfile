@@ -5,7 +5,8 @@ WORKDIR /opt/tbed/
 ADD . /tmp
 # 在容器内进行项目编译
 RUN cd /tmp && mvn package -DskipTests -Pci \
-&& mv target/* /opt/tbed/
+&& mv target/* /opt/tbed/ \
+&& chmod 777 target/*
 
 FROM openjdk:8-alpine
 LABEL maintainer="fzb<fzb2469081876@163.com>"
